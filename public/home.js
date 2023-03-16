@@ -59,7 +59,7 @@ function getUpcomingAppointments() {
     .then(res => {
         console.log('UPCOMING')
         console.log(res.data)
-        for (let i = 0; i < res.data.length; i++) {
+        for (let i = 0; i < res.data.length; i += 2) {
             const appt = res.data[i]
             const nextAppt = res.data[i + 1] || null
             const apptElem = makeApptCard(appt, nextAppt)
